@@ -1,0 +1,13 @@
+@import url('./main-layout.css');
+@import url('./views/person-form-view.css');
+    [theme~="dark"] {
+      --lumo-error-color: hsl(42, 90%, 63%);
+      --lumo-error-color-50pct: hsla(42, 90%, 63%, 0.5);
+      --lumo-error-color-10pct: hsla(42, 90%, 63%, 0.1);
+      --lumo-success-color: hsl(187, 73%, 56%);
+      --lumo-success-color-50pct: hsla(187, 73%, 56%, 0.5);
+      --lumo-success-color-10pct: hsla(187, 73%, 56%, 0.1);
+      --lumo-error-text-color: hsl(42, 90%, 63%);
+      --lumo-success-text-color: hsl(187, 73%, 56%);
+
+    }
