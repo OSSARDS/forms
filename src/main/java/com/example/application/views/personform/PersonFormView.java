@@ -92,7 +92,7 @@ public class PersonFormView extends Div {
             countryCode.setWidth("120px");
             countryCode.setPlaceholder("Country");
             countryCode.setAllowedCharPattern("[\\+\\d]");
-            countryCode.setItems("+354", "+91", "+62", "+98", "+964", "+353", "+44", "+972", "+39", "+225");
+            countryCode.setItems("+30", "+357");
             countryCode.addCustomValueSetListener(e -> countryCode.setValue(e.getDetail()));
             number.setAllowedCharPattern("\\d");
             HorizontalLayout layout = new HorizontalLayout(countryCode, number);
