@@ -34,10 +34,10 @@ public class PersonFormView extends Div {
     private EmailField email = new EmailField("Email address");
     private DatePicker dateOfBirth = new DatePicker("Birthday");
     private PhoneNumberField phone = new PhoneNumberField("Phone number");
-    private TextField occupation = new TextField("Occupation");
+    private TextField department = new TextField("department");
 
     private Button cancel = new Button("Cancel");
-    private Button save = new Button("Save");
+    private Button submit = new Button("Submit");
 
     private Binder<SamplePerson> binder = new Binder<>(SamplePerson.class);
 
@@ -52,7 +52,7 @@ public class PersonFormView extends Div {
         clearForm();
 
         cancel.addClickListener(e -> clearForm());
-        save.addClickListener(e -> {
+        submit.addClickListener(e -> {
             personService.update(binder.getBean());
             Notification.show(binder.getBean().getClass().getSimpleName() + " details stored.");
             clearForm();
@@ -70,15 +70,15 @@ public class PersonFormView extends Div {
     private Component createFormLayout() {
         FormLayout formLayout = new FormLayout();
         email.setErrorMessage("Please enter a valid email address");
-        formLayout.add(firstName, lastName, dateOfBirth, phone, email, occupation);
+        formLayout.add(firstName, lastName, dateOfBirth, phone, email, department);
         return formLayout;
     }
 
     private Component createButtonLayout() {
         HorizontalLayout buttonLayout = new HorizontalLayout();
         buttonLayout.addClassName("button-layout");
-        save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        buttonLayout.add(save);
+        submit.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        buttonLayout.add(submit);
         buttonLayout.add(cancel);
         return buttonLayout;
     }
