@@ -8,11 +8,11 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.customfield.CustomField;
-import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dependency.Uses;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.H5;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -23,7 +23,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 
-@PageTitle("Person Form")
+@PageTitle("Personal CV Form")
 @Route(value = "person-form", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
 @Uses(Icon.class)
@@ -32,9 +32,9 @@ public class PersonFormView extends Div {
     private TextField firstName = new TextField("First name");
     private TextField lastName = new TextField("Last name");
     private EmailField email = new EmailField("Email address");
-    private DatePicker dateOfBirth = new DatePicker("Birthday");
     private PhoneNumberField phone = new PhoneNumberField("Phone number");
-    private TextField department = new TextField("department");
+    private TextField department = new TextField("Department");
+    private TextField languages = new TextField("Spoken languages");
 
     private Button cancel = new Button("Cancel");
     private Button submit = new Button("Submit");
@@ -67,10 +67,14 @@ public class PersonFormView extends Div {
         return new H3("Personal information");
     }
 
+    private Component createTitle() {
+        return new H5("Fill your persomal information");
+    }
+
     private Component createFormLayout() {
         FormLayout formLayout = new FormLayout();
         email.setErrorMessage("Please enter a valid email address");
-        formLayout.add(firstName, lastName, dateOfBirth, phone, email, department);
+        formLayout.add(firstName, lastName, phone, email, department, languages);
         return formLayout;
     }
 
