@@ -22,6 +22,8 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
+import com.vaadin.flow.component.checkbox.CheckboxGroup;
+import com.vaadin.flow.component.checkbox.CheckboxGroupVariant;
 
 @PageTitle("Personal CV Form")
 @Route(value = "person-form", layout = MainLayout.class)
@@ -34,7 +36,7 @@ public class PersonFormView extends Div {
     private EmailField email = new EmailField("Email address");
     private PhoneNumberField phone = new PhoneNumberField("Phone number");
     private TextField department = new TextField("Department");
-    private TextField languages = new TextField("Spoken languages");
+    private TextField languages = new CheckboxVertical("Spoken languages");
 
     private Button cancel = new Button("Cancel");
     private Button submit = new Button("Submit");
@@ -126,6 +128,20 @@ public class PersonFormView extends Div {
                 countryCode.clear();
                 number.clear();
             }
+        }
+
+        @Route("checkbox-vertical")
+        public class CheckboxVertical extends Div {
+
+            public CheckboxVertical() {
+                CheckboxGroup<String> checkboxGroup = new CheckboxGroup<>();
+                checkboxGroup.setLabel("Languages");
+                checkboxGroup.setItems("English", "Greek", "French", "German",
+                        "Russian", "Spanish", "Other");
+                checkboxGroup.addThemeVariants(CheckboxGroupVariant.LUMO_VERTICAL);
+                add(checkboxGroup);
+            }
+
         }
     }
 
