@@ -1,4 +1,4 @@
-package com.vaadin.demo.component.upload;
+package com.vaadin.demo.component;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.upload.Upload;

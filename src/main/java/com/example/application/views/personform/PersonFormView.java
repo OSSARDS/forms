@@ -3,6 +3,8 @@ package com.example.application.views.personform;
 import com.example.application.data.entity.SamplePerson;
 import com.example.application.data.service.SamplePersonService;
 import com.example.application.views.MainLayout;
+import com.vaadin.demo.component.CheckboxVertical;
+//import com.example.application.views.personform.PersonFormView.PhoneNumberField.CheckboxVertical;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -36,7 +38,8 @@ public class PersonFormView extends Div {
     private EmailField email = new EmailField("Email address");
     private PhoneNumberField phone = new PhoneNumberField("Phone number");
     private TextField department = new TextField("Department");
-    private TextField languages = new CheckboxVertical("Spoken languages");
+    private CheckboxVertical languages = new CheckboxVertical();
+
 
     private Button cancel = new Button("Cancel");
     private Button submit = new Button("Submit");
@@ -47,6 +50,7 @@ public class PersonFormView extends Div {
         addClassName("person-form-view");
 
         add(createTitle());
+        add(createSubtitle());
         add(createFormLayout());
         add(createButtonLayout());
 
@@ -69,8 +73,8 @@ public class PersonFormView extends Div {
         return new H3("Personal information");
     }
 
-    private Component createTitle() {
-        return new H5("Fill your persomal information");
+    private Component createSubtitle() {
+        return new H5("Fill your personal information");
     }
 
     private Component createFormLayout() {
@@ -128,20 +132,6 @@ public class PersonFormView extends Div {
                 countryCode.clear();
                 number.clear();
             }
-        }
-
-        @Route("checkbox-vertical")
-        public class CheckboxVertical extends Div {
-
-            public CheckboxVertical() {
-                CheckboxGroup<String> checkboxGroup = new CheckboxGroup<>();
-                checkboxGroup.setLabel("Languages");
-                checkboxGroup.setItems("English", "Greek", "French", "German",
-                        "Russian", "Spanish", "Other");
-                checkboxGroup.addThemeVariants(CheckboxGroupVariant.LUMO_VERTICAL);
-                add(checkboxGroup);
-            }
-
         }
     }
 
