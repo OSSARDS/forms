@@ -1,4 +1,3 @@
-
 package com.vaadin.demo.component;
 
 import com.vaadin.flow.component.checkbox.CheckboxGroup;

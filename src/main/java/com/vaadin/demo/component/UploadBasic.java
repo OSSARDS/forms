@@ -5,6 +5,7 @@ import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.MultiFileMemoryBuffer;
 import com.vaadin.flow.router.Route;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 @Route("upload-basic")
@@ -17,7 +18,11 @@ public class UploadBasic extends Div {
 
         upload.addSucceededListener(event -> {
             String fileName = event.getFileName();
-            InputStream inputStream = buffer.getInputStream(fileName);
+            try (InputStream inputStream = buffer.getInputStream(fileName)) {
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
 
             // Do something with the file data
             // processFile(inputStream, fileName);
