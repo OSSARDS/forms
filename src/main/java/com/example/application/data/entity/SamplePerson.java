@@ -2,7 +2,6 @@ package com.example.application.data.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.Email;
-import java.time.LocalDate;
 
 @Entity
 public class SamplePerson extends AbstractEntity {
@@ -12,8 +11,7 @@ public class SamplePerson extends AbstractEntity {
     @Email
     private String email;
     private String phone;
-    private LocalDate dateOfBirth;
-    private String occupation;
+    private String department;
     private String role;
     private boolean important;
 
@@ -41,17 +39,11 @@ public class SamplePerson extends AbstractEntity {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public String getDepartment() {
+        return department;
     }
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-    public String getOccupation() {
-        return occupation;
-    }
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setDepartment(String department) {
+        this.department = department;
     }
     public String getRole() {
         return role;
