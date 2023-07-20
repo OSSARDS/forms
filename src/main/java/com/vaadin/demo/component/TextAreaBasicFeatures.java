@@ -15,11 +15,11 @@ public class TextAreaBasicFeatures extends HorizontalLayout {
         // tag::snippet[]
         TextArea field = new TextArea();
         field.setLabel("Other information");
-        field.setHelperText("Helper text");
+        //field.setHelperText("Helper text");
         field.setPlaceholder("Write here..");
         field.setTooltipText("Write something about you");
         field.setClearButtonVisible(true);
-        field.setPrefixComponent(VaadinIcon.VAADIN_H.create());
+        field.setPrefixComponent(VaadinIcon.PENCIL.create());
         field.setSuffixComponent(new Span(":)"));
         // end::snippet[]
         field.setWidthFull();

@@ -38,17 +38,23 @@ public class PersonFormView extends Div {
     private PhoneNumberField phone = new PhoneNumberField("Phone number");
     private TextField department = new TextField("Department");
     private CheckboxHorizontal languages = new CheckboxHorizontal();
-    private UploadBasic upload = new UploadBasic();
-    private TextAreaBasicFeatures textarea = new TextAreaBasicFeatures();
+    private TextField degreeGrad = new TextField("Graduation Degree(s)");
+    public TextField getDegreeGrad() {
+        return degreeGrad;
+    }
+    public void setDegreeGrad(TextField degreeGrad) {
+        this.degreeGrad = degreeGrad;
+    }
+    private TextField degreePostgrad = new TextField("Post-graduation Degree(s)");
+    public TextField getDegreePostgrad() {
+        return degreePostgrad;
+    }
+    public void setDegreePostgrad(TextField degreePostgrad) {
+        this.degreePostgrad = degreePostgrad;
+    }
+    private TextAreaBasicFeatures textAreaBasicFeatures = new TextAreaBasicFeatures();
     
-    public UploadBasic getUpload() {
-        return upload;
-    }
-
-    public void setUpload(UploadBasic upload) {
-        this.upload = upload;
-    }
-
+    private UploadBasic upload = new UploadBasic();
     private Button cancel = new Button("Cancel");
     private Button submit = new Button("Submit");
 
@@ -88,7 +94,7 @@ public class PersonFormView extends Div {
     private Component createFormLayout() {
         FormLayout formLayout = new FormLayout();
         email.setErrorMessage("Please enter a valid email address");
-        formLayout.add(firstName, lastName, phone, email, department, languages);
+        formLayout.add(firstName, lastName, phone, email, department, languages, degreeGrad, degreePostgrad, textAreaBasicFeatures);
         return formLayout;
     }
 

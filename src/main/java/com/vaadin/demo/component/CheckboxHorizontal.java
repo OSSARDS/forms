@@ -13,7 +13,7 @@ public class CheckboxHorizontal extends Div {
         CheckboxGroup<String> checkboxGroup = new CheckboxGroup<>();
         checkboxGroup.setLabel("Languages");
         checkboxGroup.setItems("English", "Greek", "French", "German",
-                "Russian", "Spanish", "Other");
+                "Russian", "Spanish", "Chinese", "Arabic", "Portuguese", "Other");
         
         add(checkboxGroup);
         // end::snippet[]
