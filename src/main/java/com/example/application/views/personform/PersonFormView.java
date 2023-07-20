@@ -5,6 +5,8 @@ import com.example.application.data.service.SamplePersonService;
 import com.example.application.views.MainLayout;
 import com.vaadin.demo.component.CheckboxHorizontal;
 import com.vaadin.demo.component.TextAreaBasicFeatures;
+import com.vaadin.demo.component.TextAreaSkills;
+import com.vaadin.demo.component.TextAreaXP;
 import com.vaadin.demo.component.UploadBasic;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
@@ -52,9 +54,18 @@ public class PersonFormView extends Div {
     public void setDegreePostgrad(TextField degreePostgrad) {
         this.degreePostgrad = degreePostgrad;
     }
-    private TextAreaBasicFeatures textAreaBasicFeatures = new TextAreaBasicFeatures();
-    
+   
+   
+   
+    private TextAreaBasicFeatures otherInput = new TextAreaBasicFeatures();
+    //private TextFieldBasicFeatures skills = new TextFieldBasicFeatures();
+    //private TextField skills = new TextField("Skills");
+    private TextAreaSkills skills = new TextAreaSkills();
+    private TextAreaXP xp = new TextAreaXP();
+
+
     private UploadBasic upload = new UploadBasic();
+
     private Button cancel = new Button("Cancel");
     private Button submit = new Button("Submit");
 
@@ -94,7 +105,7 @@ public class PersonFormView extends Div {
     private Component createFormLayout() {
         FormLayout formLayout = new FormLayout();
         email.setErrorMessage("Please enter a valid email address");
-        formLayout.add(firstName, lastName, phone, email, department, languages, degreeGrad, degreePostgrad, textAreaBasicFeatures);
+        formLayout.add(firstName, lastName, phone, email, department, languages, degreeGrad, degreePostgrad, skills, xp, otherInput);
         return formLayout;
     }
 
