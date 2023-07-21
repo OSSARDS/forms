@@ -7,15 +7,15 @@ import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.router.Route;
 
 @Route("text-area-helper")
-public class TextAreaXP extends Div {
+public class TextAreaHobbies extends Div {
 
-    public TextAreaXP() {
-        int charLimit = 2000;
+    public TextAreaHobbies() {
+        int charLimit = 600;
 
         TextArea textArea = new TextArea();
         textArea.setWidthFull();
-        textArea.setLabel("Experience");
-        textArea.setPlaceholder("(!) State and list your previous working experience starting from the most recent.");
+        textArea.setLabel("Hobbies");
+        textArea.setPlaceholder("Seperate your hobbies with a comma");
         textArea.setMaxLength(charLimit);
         textArea.setClearButtonVisible(true);
         textArea.setPrefixComponent(VaadinIcon.FILE_TEXT.create());

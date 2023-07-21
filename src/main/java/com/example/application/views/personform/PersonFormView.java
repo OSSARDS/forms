@@ -4,7 +4,9 @@ import com.example.application.data.entity.SamplePerson;
 import com.example.application.data.service.SamplePersonService;
 import com.example.application.views.MainLayout;
 import com.vaadin.demo.component.CheckboxHorizontal;
+import com.vaadin.demo.component.DatePickerBasic;
 import com.vaadin.demo.component.TextAreaBasicFeatures;
+import com.vaadin.demo.component.TextAreaHobbies;
 import com.vaadin.demo.component.TextAreaSkills;
 import com.vaadin.demo.component.TextAreaXP;
 import com.vaadin.demo.component.UploadBasic;
@@ -37,10 +39,14 @@ public class PersonFormView extends Div {
     private TextField firstName = new TextField("First name");
     private TextField lastName = new TextField("Last name");
     private EmailField email = new EmailField("Email address");
+    private TextField nationality = new TextField("Nationality");
+    private TextField citizenship = new TextField("Citizenship");
     private PhoneNumberField phone = new PhoneNumberField("Phone number");
     private TextField department = new TextField("Department");
     private CheckboxHorizontal languages = new CheckboxHorizontal();
     private TextField degreeGrad = new TextField("Graduation Degree(s)");
+    private DatePickerBasic dateOfBirth = new DatePickerBasic();
+    private TextAreaHobbies hobbies = new TextAreaHobbies();
     public TextField getDegreeGrad() {
         return degreeGrad;
     }
@@ -105,7 +111,9 @@ public class PersonFormView extends Div {
     private Component createFormLayout() {
         FormLayout formLayout = new FormLayout();
         email.setErrorMessage("Please enter a valid email address");
-        formLayout.add(firstName, lastName, phone, email, department, languages, degreeGrad, degreePostgrad, skills, xp, otherInput);
+        formLayout.add(firstName, lastName, phone, email, nationality, citizenship, dateOfBirth, department, languages, 
+                        degreeGrad, degreePostgrad, xp, hobbies, skills, otherInput,
+                        upload);
         return formLayout;
     }
 
