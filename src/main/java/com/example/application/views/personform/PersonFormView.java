@@ -7,6 +7,7 @@ import com.vaadin.demo.component.CheckboxHorizontal;
 import com.vaadin.demo.component.DatePickerBasic;
 import com.vaadin.demo.component.TextAreaBasicFeatures;
 import com.vaadin.demo.component.TextAreaHobbies;
+import com.vaadin.demo.component.TextAreaPublications;
 import com.vaadin.demo.component.TextAreaSkills;
 import com.vaadin.demo.component.TextAreaXP;
 import com.vaadin.demo.component.UploadBasic;
@@ -47,6 +48,7 @@ public class PersonFormView extends Div {
     private TextField degreeGrad = new TextField("Graduation Degree(s)");
     private DatePickerBasic dateOfBirth = new DatePickerBasic();
     private TextAreaHobbies hobbies = new TextAreaHobbies();
+    private TextAreaPublications publications = new TextAreaPublications();
     public TextField getDegreeGrad() {
         return degreeGrad;
     }
@@ -112,7 +114,7 @@ public class PersonFormView extends Div {
         FormLayout formLayout = new FormLayout();
         email.setErrorMessage("Please enter a valid email address");
         formLayout.add(firstName, lastName, phone, email, nationality, citizenship, dateOfBirth, department, languages, 
-                        degreeGrad, degreePostgrad, xp, hobbies, skills, otherInput,
+                        degreeGrad, degreePostgrad, xp, publications, hobbies, skills, otherInput,
                         upload);
         return formLayout;
     }
